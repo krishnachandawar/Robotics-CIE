@@ -1,40 +1,4 @@
-"""
-CS2110 Introduction to Robotics -- CIE-3 Project
-Planar 2R Manipulator Arm: COMPLETED & FULLY WORKING SIMULATION
 
-Run:  python arm_starter.py              (requires: pip install pygame)
-
-WHAT ALREADY WORKS & NEWLY IMPLEMENTED:
-  * Part 2.1: Real-time HUD displaying joint angles (q1, q2 in deg & rad), end-effector position (x, y),
-              elbow position, chord length, current path length, and deviation.
-  * Part 2.2: Smooth joint-space motion q(t) = qA + s(t)(qB - qA) with FK; end-effector trail rendering,
-              distinct color-coded markers for points A and B, live tracking of chord deviation.
-  * Part 2.3: Selectable time-scaling profiles (Linear, Cubic 3-4-5, and Trapezoidal piecewise velocity)
-              with real-time HUD indication and speed profiling.
-  * Part 2.4: Fast pre-rendered reachable workspace cloud (sampling joint space), concentric inner and outer
-              boundary circles (r_min = |L1 - L2| = 0.5 m, r_max = L1 + L2 = 2.5 m), and live det(J) calculation.
-  * Part 2.5: Analytical Inverse Kinematics (IK) with reachability verification, supporting both elbow-up
-              and elbow-down solutions, and pure Cartesian straight-line interpolation A -> B.
-  * Part 3:   Ready for live modifications: toggle elbow configuration (E key), live interactive IK mouse tracking (M key),
-              time-scaling profile switching (P key), and live link parameter adjustments.
-
-CONTROLS
-  1 = Manual joint control (LEFT/RIGHT = joint 1, UP/DOWN = joint 2)
-  2 = Joint-space motion A -> B (SPACE to start/restart)
-  3 = Cartesian straight-line motion A -> B using IK (SPACE to start/restart)
-  4 = Live Interactive IK Mouse Tracking (Move mouse to test IK anywhere!)
-  SPACE = Start / restart trajectory from A
-  P = Cycle time-scaling profile (Linear <-> Cubic <-> Trapezoidal)
-  E = Toggle elbow solution (Elbow Down <-> Elbow Up)
-  W = Toggle reachable workspace cloud & boundary display
-  C = Clear trail
-  ESC = Quit
-
-CONVENTIONS
-  World frame: metres, origin at the arm base, x right, y UP.
-  q1 = angle of link 1 from +x axis; q2 = angle of link 2 RELATIVE to link 1.
-  All angles are in radians inside the code (degrees displayed in HUD).
-"""
 import math
 import sys
 import pygame
