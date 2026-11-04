@@ -1,34 +1,4 @@
-"""
-CS2110 Introduction to Robotics -- CIE-3 Project
-Differential Drive Robot: COMPLETED & FULLY WORKING SIMULATION
 
-Run:  python diffdrive_starter.py        (requires: pip install pygame)
-
-WHAT ALREADY WORKS & NEWLY IMPLEMENTED:
-  * Part 1.1: Trajectory logging and drawing, real-time pose HUD (x, y, theta [deg], v, omega, elapsed time),
-              circular constant-arc motion (circle_command).
-  * Part 1.2: Inverse kinematics with wheel saturation, autonomous Go-To-Goal controller with heading error wrap,
-              start and goal interactive markers, live distance-to-goal tracking.
-  * Part 1.3: Real-time parameter switching and controller improvements (improved cos-modulated velocity option),
-              exact arc integration vs Euler comparison toggle for live demo.
-  * Part 3:   Ready for live examiner modifications: waypoint following, specified final heading,
-              wheel noise/drift simulation, and figure-eight motion.
-
-CONTROLS
-  1 = Keyboard mode (manual steering: UP/DOWN = forward/back, LEFT/RIGHT = steer)
-  2 = Go-to-goal mode (click window to set goal B)
-  3 = Circle mode (constant radius R)
-  4 = Figure-eight mode (bonus live demo feature)
-  R = Reset robot to start pose
-  C = Clear trajectory trail
-  I = Toggle integration method (Forward Euler vs Exact Arc)
-  M = Toggle controller mode (Standard vs Improved Cos-Modulated)
-  ESC = Quit
-
-CONVENTIONS
-  World frame: metres, x to the right, y UP, theta counter-clockwise from +x.
-  Pygame's pixel y-axis points DOWN, so world_to_screen() flips y.
-"""
 import math
 import sys
 import pygame
